@@ -16,7 +16,7 @@ export const AppBarHeader = styled.header`
   padding-bottom: 12px;
   margin-bottom: 20px;
   color: #fff;
-  background-color: #032c80;
+  background-color: #038065;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
@@ -28,11 +28,11 @@ export const NavLinkStyled = styled(NavLink)`
   color: #81bece;
   font-weight: 500;
   &.active {
-    color: #e8ede7;
-    background-color: #012e4a;
+    color: #E5E9F2;
+    background-color: #038065;
   }
   &:hover:not(.active),
   &:focus:not(.active) {
-    color: #e8ede7;
+    color: #E5E9F2;
   }
 `;
