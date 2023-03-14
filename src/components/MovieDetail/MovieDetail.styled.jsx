@@ -11,7 +11,7 @@ export const GoBackLink = styled(Link)`
   margin-left: 32px;
   &:hover:not(.active),
   &:focus:not(.active) {
-    background-color: #1882e7;
+    background-color: #038065;
     border: 1px solid #1882e7;
     color: #e8ede7;
   }
