@@ -23,10 +23,9 @@ const Movies = () => {
   useEffect(() => {
     if (!query) {
       return;
+
     }
-    fetchToSearch(query);
-    setIsLoading(false);
-  }, [])
+  })
 
   async function fetchToSearch() {
     try {
