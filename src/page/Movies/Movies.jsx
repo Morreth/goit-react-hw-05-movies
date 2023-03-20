@@ -23,8 +23,8 @@ const Movies = () => {
   useEffect(() => {
     if (!query) {
       return;
-
     }
+    fetchToSearch(query);
   })
 
   async function fetchToSearch() {
