@@ -25,7 +25,8 @@ const Movies = () => {
       return;
     }
     fetchToSearch(query);
-  })
+    setIsLoading(false);
+  }, [query])
 
   async function fetchToSearch() {
     try {
