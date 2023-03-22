@@ -36,3 +36,10 @@ export const CastNameItem = styled.li`
   margin-bottom: 5px;
   font-weight: 700;
 `;
+
+export const NoCast = styled.p`
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 24px;
+  font-weight: 500;
+`;

@@ -18,39 +18,41 @@ const Movies = () => {
   const [movieArr, setMovieArr] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-   
+     
 
   useEffect(() => {
     if (!query) {
       return;
-
     }
-  }, [query])
-
-  async function fetchToSearch() {
-    try {
+    const fetchData = async () => {
       setIsLoading(true);
+      try {
       const r = await findQuery(query);
       const movieArr = r.map(({ id, name, title }) => ({
         id,
         name,
         title,
       }));
-      setMovieArr(movieArr)
+      setMovieArr(movieArr);
       if (r.length > 0) {
         return setMovieArr(r);
       } else {
         setMovieArr([]);
-        return toast.error(
+        toast.error(
           'Sorry, there are no images matching your search query.'
         );
-      }
-    } catch (error) {
-      setError(error.message);
-    } finally {
+      }        
+      } catch (error) {
+        setError(error.message);
+      } finally {
       setIsLoading(false);
-    }
-  }
+      }
+    };    
+    fetchData();
+    
+  }, [query]);
+
+  
     const updateQueryString = query => {
       const nextParams = query !== '' ? { query } : {};
       setSearchParams(nextParams);
@@ -58,11 +60,9 @@ const Movies = () => {
   const searchSubmit = e => {
     e.preventDefault();
     if (query.trim() === '') {
-      toast.error('Please enter some world');
+      toast.error('Please enter some word');
       return;
     }
-    fetchToSearch(query);
-    query = '';
   };
 
   return (
